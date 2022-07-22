@@ -20,14 +20,13 @@ export const Single = props => {
     			</h2>
 				<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 					<div class="accordion-body">
-						<strong>Stone Floor</strong> 
 						<ul class="list-group">
-							<li class="list-group-item">An item</li>
-							<li class="list-group-item">A second item</li>
-							<li class="list-group-item">A third item</li>
-							<li class="list-group-item">A fourth item</li>
-							<li class="list-group-item">And a fifth one</li>
-							</ul>
+							<li class="list-group-item">2x2</li>
+							<li class="list-group-item">3x3</li>
+							<li class="list-group-item">4x4</li>
+							<li class="list-group-item">2x6</li>
+							<li class="list-group-item">6x6</li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -39,8 +38,16 @@ export const Single = props => {
     			</h2>
 				<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 					<div class="accordion-body">
-						<strong>Stone Walls</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-					</div>
+						<ul class="list-group">
+							<li class="list-group-item">2x2 <div class="input-group">
+  							<span class="input-group-text">Quantity</span>
+  							<input type="number" aria-label="Quantity" class="form-control"/>
+							</div></li>
+							<li class="list-group-item">3x3</li>
+							<li class="list-group-item">4x4</li>
+							<li class="list-group-item">2x6</li>
+							<li class="list-group-item">6x6</li>
+						</ul>					</div>
 				</div>
 			</div>
 			</div>
