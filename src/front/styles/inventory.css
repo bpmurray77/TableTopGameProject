@@ -1,0 +1,6 @@
+.parent {
+  margin-top: 50px;
+  width: 90%;
+  display: flex;
+  align-content: center;
+}
