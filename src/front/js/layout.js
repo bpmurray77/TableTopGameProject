@@ -21,9 +21,9 @@ const Layout = () => {
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
                     <Navbar 
-                    header = "Start Bootstrap"
-                    home = "Home"
-                    about = "About"
+                    header = "Tiles Generator"
+                    home = "Inventory"
+                    about = "Generator"
                     service = "Service"
                     contact = "Contact"/>
                     <Routes>
