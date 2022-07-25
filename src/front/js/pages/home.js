@@ -32,17 +32,24 @@ export const Home = () => {
         <p class="col-md-8 fs-4 text-white">Create your very own maps with our inventory of tiles!</p>
        <Link to="/single">
         <button style={{
-          marginTop: '16vh',
+          marginTop: '15vh',
           width:"150vh",
           marginLeft:"20vh"
       }} class="btn btn-outline-light" type="button">----Tile Inventory----</button>
        </Link>
        <Link to="/signup">
         <button style={{
-          marginTop: '16vh',
+          marginTop: '18vh',
           width:"150vh",
           marginLeft:"20vh"
       }} class="btn btn-outline-light" type="button">----Sign Up----</button>
+       </Link>
+       <Link to="/login">
+        <button style={{
+          marginTop: '18vh',
+          width:"150vh",
+          marginLeft:"20vh"
+      }} class="btn btn-outline-light" type="button">----Log In----</button>
        </Link>
         </div>
       </div>
