@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -29,12 +30,13 @@ export const Home = () => {
         <h1  class="display-5 fw-bold text-white">Tileset Generator</h1>
         <div style={myStyle1}>
         <p class="col-md-8 fs-4 text-white">Create your very own maps with our inventory of tiles!</p>
+       <Link to="/single">
         <button style={{
           marginTop: '16vh',
           width:"150vh",
           marginLeft:"20vh"
-      
       }} class="btn btn-outline-light" type="button">----Tile Inventory----</button>
+       </Link>
         </div>
       </div>
     </div>
