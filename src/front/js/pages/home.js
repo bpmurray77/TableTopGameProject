@@ -37,6 +37,13 @@ export const Home = () => {
           marginLeft:"20vh"
       }} class="btn btn-outline-light" type="button">----Tile Inventory----</button>
        </Link>
+       <Link to="/signup">
+        <button style={{
+          marginTop: '16vh',
+          width:"150vh",
+          marginLeft:"20vh"
+      }} class="btn btn-outline-light" type="button">----Sign Up----</button>
+       </Link>
         </div>
       </div>
     </div>
