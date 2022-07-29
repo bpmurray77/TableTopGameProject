@@ -18,3 +18,10 @@
 .input-group {
   margin-left: 75%;
 }
+
+.link {
+  display: flex;
+  position: relative;
+  top: 10px;
+  flex-direction: column;
+}

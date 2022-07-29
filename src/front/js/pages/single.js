@@ -12,32 +12,69 @@ export const Single = (props) => {
   return (
     <div className="parent">
       <ul class="dropdown-menu d-block position-static mx-0 shadow w-220px">
-    <li>
-      <a class="dropdown-item d-flex gap-2 align-items-center" href="/single">
-        <svg class="bi" width="16" height="16"></svg>
-        Basic Stone Dungeon
-      </a>
-    </li>
-    <li>
-      <a class="dropdown-item d-flex gap-2 align-items-center" href="/sewer">
-        <svg class="bi" width="16" height="16"></svg>
-        Sewer
-      </a>
-    </li>
-    <li>
-      <a class="dropdown-item d-flex gap-2 align-items-center" href="/town">
-        <svg class="bi" width="16" height="16"></svg>
-        Town and Streets
-      </a>
-    </li>
-    <li>
-      <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
-        <svg class="bi" width="16" height="16"></svg>
-        Ruins
-      </a>
-    </li>
-    <li><hr class="dropdown-divider"/></li>
-  </ul>
+        <li>
+          <a
+            class="dropdown-item d-flex gap-2 align-items-center"
+            href="/single"
+          >
+            <svg class="bi" width="16" height="16"></svg>
+            Basic Stone Dungeon
+          </a>
+        </li>
+        <li>
+          <a
+            class="dropdown-item d-flex gap-2 align-items-center"
+            href="/sewer"
+          >
+            <svg class="bi" width="16" height="16"></svg>
+            Sewer
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item d-flex gap-2 align-items-center" href="/town">
+            <svg class="bi" width="16" height="16"></svg>
+            Town and Streets
+          </a>
+        </li>
+        <li>
+          <a
+            class="dropdown-item d-flex gap-2 align-items-center"
+            href="/ruins"
+          >
+            <svg class="bi" width="16" height="16"></svg>
+            Ruins
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+      </ul>
+      <div class="link">
+        <a href="https://www.thingiverse.com/thing:171315/files">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="21"
+            height="21"
+            fill="currentColor"
+            class="bi bi-link"
+          >
+            <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
+            <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z" />
+          </svg>
+        </a>
+        <a href="https://www.thingiverse.com/thing:171315/files">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="21"
+            height="21"
+            fill="currentColor"
+            class="bi bi-link"
+          >
+            <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
+            <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z" />
+          </svg>
+        </a>
+      </div>
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
@@ -49,15 +86,10 @@ export const Single = (props) => {
               aria-expanded="false"
               aria-controls="collapseOne"
             >
-              <a href="https://www.thingiverse.com/thing:171315/files">
-                Stone Dungeon Floor
-              </a>
+              Stone Dungeon Floor
             </button>
           </h2>
-          <div
-            id="collapseOne"
-            class="accordion-collapse collapse"
-          >
+          <div id="collapseOne" class="accordion-collapse collapse">
             <div class="accordion-body">
               <ul class="list-group">
                 <li class="list-group-item">
@@ -174,6 +206,7 @@ export const Single = (props) => {
             </div>
           </div>
         </div>
+
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button
@@ -184,9 +217,7 @@ export const Single = (props) => {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-				<a href="https://www.thingiverse.com/thing:178621/files">
-                Stone Dungeon Walls
-              	</a>
+              Stone Dungeon Walls
             </button>
           </h2>
           <div
@@ -196,7 +227,7 @@ export const Single = (props) => {
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body">
-            <ul class="list-group">
+              <ul class="list-group">
                 <li class="list-group-item">
                   1x1
                   <div class="input-group">
@@ -321,7 +352,7 @@ export const Single = (props) => {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-                Stone Dungeon Wall Corners
+              Stone Dungeon Wall Corners
             </button>
           </h2>
           <div
@@ -331,7 +362,7 @@ export const Single = (props) => {
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body">
-            <ul class="list-group">
+              <ul class="list-group">
                 <li class="list-group-item">
                   1x1
                   <div class="input-group">

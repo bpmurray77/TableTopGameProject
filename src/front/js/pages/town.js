@@ -37,7 +37,7 @@ export const Town = (props) => {
           </a>
         </li>
         <li>
-          <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+          <a class="dropdown-item d-flex gap-2 align-items-center" href="/ruins">
             <svg class="bi" width="16" height="16"></svg>
             Ruins
           </a>
@@ -402,6 +402,133 @@ export const Town = (props) => {
           >
             <div class="accordion-body">
               <ul class="list-group">
+                <li class="list-group-item">
+                  2x2
+                  <div class="input-group">
+                    <span class="input-group-text">Quantity</span>
+                    <input
+                      type="number"
+                      aria-label="Quantity"
+                      class="form-control"
+                    />
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  2x4
+                  <div class="input-group">
+                    <span class="input-group-text">Quantity</span>
+                    <input
+                      type="number"
+                      aria-label="Quantity"
+                      class="form-control"
+                    />
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  4x4
+                  <div class="input-group">
+                    <span class="input-group-text">Quantity</span>
+                    <input
+                      type="number"
+                      aria-label="Quantity"
+                      class="form-control"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFive"
+              aria-expanded="false"
+              aria-controls="collapseFive"
+            >
+              Fan Pattern Cobblestone Streets
+            </button>
+          </h2>
+          <div
+            id="collapseFive"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  2x2
+                  <div class="input-group">
+                    <span class="input-group-text">Quantity</span>
+                    <input
+                      type="number"
+                      aria-label="Quantity"
+                      class="form-control"
+                    />
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  2x4
+                  <div class="input-group">
+                    <span class="input-group-text">Quantity</span>
+                    <input
+                      type="number"
+                      aria-label="Quantity"
+                      class="form-control"
+                    />
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  4x4
+                  <div class="input-group">
+                    <span class="input-group-text">Quantity</span>
+                    <input
+                      type="number"
+                      aria-label="Quantity"
+                      class="form-control"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSix"
+              aria-expanded="false"
+              aria-controls="collapseSix"
+            >
+              Brick Sidewalks
+            </button>
+          </h2>
+          <div
+            id="collapseSix"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  2x1
+                  <div class="input-group">
+                    <span class="input-group-text">Quantity</span>
+                    <input
+                      type="number"
+                      aria-label="Quantity"
+                      class="form-control"
+                    />
+                  </div>
+                </li>
                 <li class="list-group-item">
                   2x2
                   <div class="input-group">

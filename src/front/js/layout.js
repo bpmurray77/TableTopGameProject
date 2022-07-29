@@ -7,6 +7,7 @@ import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { Sewer } from "./pages/sewer";
 import { Town } from "./pages/town";
+import { Ruins } from "./pages/ruins";
 import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -34,6 +35,7 @@ const Layout = () => {
                         <Route element={<Single />} path="/single" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<Sewer />} path="/sewer" />
+                        <Route element={<Ruins />} path="/ruins" />
                         <Route element={<Town />} path="/town" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
