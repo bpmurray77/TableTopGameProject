@@ -6,7 +6,7 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import "../../styles/inventory.css";
 
-export const Single = (props) => {
+export const Ruins = (props) => {
   const { store, actions } = useContext(Context);
 
   return (
@@ -45,12 +45,9 @@ export const Single = (props) => {
             Ruins
           </a>
         </li>
-        <li>
-          <hr class="dropdown-divider" />
-        </li>
       </ul>
       <div class="link">
-        <a href="https://www.thingiverse.com/thing:171315/files">
+        <a href="https://www.thingiverse.com/thing:530656/files">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="21"
@@ -62,7 +59,7 @@ export const Single = (props) => {
             <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z" />
           </svg>
         </a>
-        <a  class="icon" href="https://www.thingiverse.com/thing:178621/files">
+        <a class="icon" href="https://www.thingiverse.com/thing:526706/files">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="21"
@@ -74,7 +71,7 @@ export const Single = (props) => {
             <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z" />
           </svg>
         </a>
-        <a  class="icon" href="https://www.thingiverse.com/thing:249776/files">
+        <a class="icon" href="https://www.thingiverse.com/thing:528781/files">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="21"
@@ -98,7 +95,7 @@ export const Single = (props) => {
               aria-expanded="false"
               aria-controls="collapseOne"
             >
-              Stone Dungeon Floor
+              Ruined Stone Floor
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse">
@@ -218,7 +215,6 @@ export const Single = (props) => {
             </div>
           </div>
         </div>
-
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button
@@ -229,7 +225,7 @@ export const Single = (props) => {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Stone Dungeon Walls
+              Ruined Walls
             </button>
           </h2>
           <div
@@ -241,106 +237,7 @@ export const Single = (props) => {
             <div class="accordion-body">
               <ul class="list-group">
                 <li class="list-group-item">
-                  1x1
-                  <div class="input-group">
-                    <span class="input-group-text">Quantity</span>
-                    <input
-                      type="number"
-                      aria-label="Quantity"
-                      class="form-control"
-                    />
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  1x2
-                  <div class="input-group">
-                    <span class="input-group-text">Quantity</span>
-                    <input
-                      type="number"
-                      aria-label="Quantity"
-                      class="form-control"
-                    />
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  1x3
-                  <div class="input-group">
-                    <span class="input-group-text">Quantity</span>
-                    <input
-                      type="number"
-                      aria-label="Quantity"
-                      class="form-control"
-                    />
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  1x4
-                  <div class="input-group">
-                    <span class="input-group-text">Quantity</span>
-                    <input
-                      type="number"
-                      aria-label="Quantity"
-                      class="form-control"
-                    />
-                  </div>
-                </li>
-                <li class="list-group-item">
                   2x2
-                  <div class="input-group">
-                    <span class="input-group-text">Quantity</span>
-                    <input
-                      type="number"
-                      aria-label="Quantity"
-                      class="form-control"
-                    />
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  2x3
-                  <div class="input-group">
-                    <span class="input-group-text">Quantity</span>
-                    <input
-                      type="number"
-                      aria-label="Quantity"
-                      class="form-control"
-                    />
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  2x4
-                  <div class="input-group">
-                    <span class="input-group-text">Quantity</span>
-                    <input
-                      type="number"
-                      aria-label="Quantity"
-                      class="form-control"
-                    />
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  3x3
-                  <div class="input-group">
-                    <span class="input-group-text">Quantity</span>
-                    <input
-                      type="number"
-                      aria-label="Quantity"
-                      class="form-control"
-                    />
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  3x4
-                  <div class="input-group">
-                    <span class="input-group-text">Quantity</span>
-                    <input
-                      type="number"
-                      aria-label="Quantity"
-                      class="form-control"
-                    />
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  4x4
                   <div class="input-group">
                     <span class="input-group-text">Quantity</span>
                     <input
@@ -364,7 +261,7 @@ export const Single = (props) => {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Stone Dungeon Wall Corners
+              Ruined Wall Corners
             </button>
           </h2>
           <div
@@ -376,40 +273,7 @@ export const Single = (props) => {
             <div class="accordion-body">
               <ul class="list-group">
                 <li class="list-group-item">
-                  1x1
-                  <div class="input-group">
-                    <span class="input-group-text">Quantity</span>
-                    <input
-                      type="number"
-                      aria-label="Quantity"
-                      class="form-control"
-                    />
-                  </div>
-                </li>
-                <li class="list-group-item">
                   2x2
-                  <div class="input-group">
-                    <span class="input-group-text">Quantity</span>
-                    <input
-                      type="number"
-                      aria-label="Quantity"
-                      class="form-control"
-                    />
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  3x3
-                  <div class="input-group">
-                    <span class="input-group-text">Quantity</span>
-                    <input
-                      type="number"
-                      aria-label="Quantity"
-                      class="form-control"
-                    />
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  4x4
                   <div class="input-group">
                     <span class="input-group-text">Quantity</span>
                     <input
