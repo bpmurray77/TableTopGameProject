@@ -45,9 +45,6 @@ export const Ruins = (props) => {
             Ruins
           </a>
         </li>
-        <li>
-          <hr class="dropdown-divider" />
-        </li>
       </ul>
       <div class="link">
         <a href="https://www.thingiverse.com/thing:530656/files">
