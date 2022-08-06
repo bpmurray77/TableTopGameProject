@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/signup.css";
-
+import{v4 as uuidv4} from "uuid"
 
 import { Context } from "../store/appContext";
 
@@ -11,13 +11,13 @@ export const Signup = () => {
 	const [password, setPassword] = useState("")
 	const registerUser = (e) =>{
 		let item = {
-
+			"id":uuidv4(),
 			"email":email, 
 			"password":password,
 			"is_active":true}
 		console.log(item)
 
-		fetch('https://3001-bpmurray77-tabletopgame-fvm0i5i5c6i.ws-us59.gitpod.io/admin/', {
+		fetch(process.env.BACKEND_URL+'/api/signup', {
       method: "POST",
       body: JSON.stringify(item),
       headers: {
