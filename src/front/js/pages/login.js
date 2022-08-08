@@ -6,6 +6,35 @@ import { Context } from "../store/appContext";
 
 export const Login = () => {
 	const { store, actions } = useContext(Context);
+  const {email, setEmail} = useState("")
+  const {password, setPassword} = useState("")
+
+
+  const handleClick = () => {
+
+    const opts = {
+      methods: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        "email": email,
+        "password": password
+      })
+    };
+    fetch('https://3000-bpmurray77-tabletopgame-kbrlru8sw0b.ws-us59.gitpod.io/api/token', opts)
+    .then(resp => {
+      if (resp.status === 200) return resp.json()
+    })
+    .then(data => {
+      sessionStorage.setItem('token', data.access_token);
+    })
+
+
+
+  };
+
+  
 
 	return (
 		<div>
@@ -25,12 +54,14 @@ export const Login = () => {
 
             <div class="mb-3">
               <input type="text" class="form-control" id="Username" aria-describedby="emailHelp"
-                placeholder="User Name"/>
+                placeholder="User Name" onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div class="mb-3">
-              <input type="password" class="form-control" id="password" placeholder="password"/>
+              <input type="password" class="form-control" id="password" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
             </div>
-            <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">Login</button></div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-color px-5 mb-5 w-100" onClick={handleClick}>Login</button>
+              </div>
             <div id="emailHelp" class="form-text text-center mb-5 text-light">Not
               Registered? 
               <Link to="/signup">
