@@ -32,7 +32,7 @@ export const Login = () => {
             </div>
             <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">Login</button></div>
             <div id="emailHelp" class="form-text text-center mb-5 text-light">Not
-              Registered? 
+              Registered Yet? 
               <Link to="/signup">
               <a class="text-light fw-bold"> Create an
                 Account</a>
