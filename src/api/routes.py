@@ -25,12 +25,14 @@ def handle_hello():
 
 #this is login
 @api.route("/token", methods=["POST"])
-def login():
+def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    if username != "test" or password != "test":
-        return jsonify({"msg": "Bad username or password"}), 401
-
+    user = User.query.filter_by(email=email).first()
+    if user is None:
+        return jsonify({"Message": "User not found"}), 401
+    if password != user.password:
+        return jsonify({"Message": "Please check your info"})
     access_token = create_access_token(identity=email)
     return jsonify(access_token=access_token)
 
