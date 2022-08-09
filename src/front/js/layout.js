@@ -27,9 +27,8 @@ const Layout = () => {
                     <Navbar 
                     header = "Tiles Generator"
                     home = "Inventory"
-                    about = "Generator"
-                    service = "Service"
-                    contact = "Contact"/>
+                    signup = "Signup"
+                    login = "Login"/>
                     <Routes>
                         <Route element={<Home />} path="/" />
                         <Route element={<Demo />} path="/demo" />
