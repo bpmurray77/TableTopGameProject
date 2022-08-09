@@ -8,33 +8,15 @@ export const Login = () => {
 	const { store, actions } = useContext(Context);
   const {email, setEmail} = useState("")
   const {password, setPassword} = useState("")
+  const token = sessionStorage.getItem("token")
 
 
-  const handleClick = () => {
-
-    const opts = {
-      methods: 'POST',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        "email": email,
-        "password": password
-      })
-    };
-    fetch('https://3000-bpmurray77-tabletopgame-kbrlru8sw0b.ws-us59.gitpod.io/api/token', opts)
-    .then(resp => {
-      if (resp.status === 200) return resp.json()
-    })
-    .then(data => {
-      sessionStorage.setItem('token', data.access_token);
-    })
-
-
-
+  const handleClick = (e) => {
+    e.preventDefault();
+    actions.login(email, password, history).catch((error) => {
+      SpeechSynthesisErrorEvent(error);
+    });
   };
-
-  
 
 	return (
 		<div>
