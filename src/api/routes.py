@@ -22,6 +22,20 @@ def handle_hello():
 
     return jsonify(response_body), 200
 
+
+#this is login
+@api.route("/token", methods=["POST"])
+def create_token():
+    email = request.json.get("email", None)
+    password = request.json.get("password", None)
+    user = User.query.filter_by(email=email).first()
+    if user is None:
+        return jsonify({"Message": "User not found"}), 401
+    if password != user.password:
+        return jsonify({"Message": "Please check your info"})
+    access_token = create_access_token(identity=email)
+    return jsonify(access_token=access_token)
+
 @api.route('/users', methods=['GET'])
 def handle_user():  
     store_user = User.query.all()
@@ -51,9 +65,3 @@ def createuser():
             return jsonify(message = "user created"),200
         return jsonify(message = "user already exist"),400
     return jsonify(message = "username or password are blank"),400
-
-
-    
-
-
-

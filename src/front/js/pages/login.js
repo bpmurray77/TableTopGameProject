@@ -6,6 +6,17 @@ import { Context } from "../store/appContext";
 
 export const Login = () => {
 	const { store, actions } = useContext(Context);
+  const {email, setEmail} = useState("")
+  const {password, setPassword} = useState("")
+  const token = sessionStorage.getItem("token")
+
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    actions.login(email, password, history).catch((error) => {
+      SpeechSynthesisErrorEvent(error);
+    });
+  };
 
 	return (
 		<div>
@@ -25,12 +36,14 @@ export const Login = () => {
 
             <div class="mb-3">
               <input type="text" class="form-control" id="Username" aria-describedby="emailHelp"
-                placeholder="User Name"/>
+                placeholder="User Name" onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div class="mb-3">
-              <input type="password" class="form-control" id="password" placeholder="password"/>
+              <input type="password" class="form-control" id="password" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
             </div>
-            <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">Login</button></div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-color px-5 mb-5 w-100" onClick={handleClick}>Login</button>
+              </div>
             <div id="emailHelp" class="form-text text-center mb-5 text-light">Not
               Registered Yet? 
               <Link to="/signup">
