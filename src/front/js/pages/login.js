@@ -25,7 +25,7 @@ export const Login = () => {
 
         })
       };
-      fetch("https://3001-bpmurray77-tabletopgame-yh9ln9qp7lo.ws-us60.gitpod.io/api/token", opts)
+      fetch(process.env.BACKEND_URL + "/api/token", opts)
       .then(resp => {
         if (resp.status === 200) return resp.json();
         else alert("there has been some error");
