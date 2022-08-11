@@ -6,20 +6,45 @@ import { Context } from "../store/appContext";
 
 export const Login = () => {
 	const { store, actions } = useContext(Context);
-  const {email, setEmail} = useState("")
-  const {password, setPassword} = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+
   const token = sessionStorage.getItem("token")
+  const handleClick = () =>{
+      
+      const opts = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
 
+          email: email,
+          password: password
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    actions.login(email, password, history).catch((error) => {
-      SpeechSynthesisErrorEvent(error);
-    });
-  };
+        })
+      };
+      fetch("https://3001-bpmurray77-tabletopgame-yh9ln9qp7lo.ws-us60.gitpod.io/api/token", opts)
+      .then(resp => {
+        if (resp.status === 200) return resp.json();
+        else alert("there has been some error");
+      })
+      .then(data =>{
+        console.log("this is from backend", data)
+        sessionStorage.setItem("token", data.access_token)
+      })
+      .catch(error =>{
+        console.error("there was an error", error);
+      })
+
+  }
+
 
 	return (
-		<div>
+    <div>
+    {(token && token!="" && token!=undefined) ? ("you are logged in with this token" + token) :(
+		
         <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
@@ -35,20 +60,19 @@ export const Login = () => {
             </div>
 
             <div class="mb-3">
-              <input type="text" class="form-control" id="Username" aria-describedby="emailHelp"
-                placeholder="User Name" onChange={(e) => setEmail(e.target.value)}/>
+              <input value={email} type="text" class="form-control" placeholder="email" onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div class="mb-3">
-              <input type="password" class="form-control" id="password" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
+              <input value={password} type="password" class="form-control" placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-color px-5 mb-5 w-100" onClick={handleClick}>Login</button>
+              <button type="button" class="btn btn-color px-5 mb-5 w-100" onClick={handleClick}>Login</button>
               </div>
             <div id="emailHelp" class="form-text text-center mb-5 text-light">Not
               Registered Yet? 
               <Link to="/signup">
-              <a class="text-light fw-bold"> Create an
-                Account</a>
+              <p class="text-light fw-bold"> Create an
+                Account</p>
                 </Link>
             </div>
           </form>
@@ -56,7 +80,7 @@ export const Login = () => {
 
       </div>
     </div>
-  </div>
+  </div>) }
         </div>
 	);
 };

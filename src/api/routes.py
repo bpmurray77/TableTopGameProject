@@ -13,28 +13,16 @@ from flask_jwt_extended import jwt_required
 api = Blueprint('api', __name__)
 
 
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
-
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
-
-    return jsonify(response_body), 200
-
-
-#this is login
-@api.route("/token", methods=["POST"])
+@api.route('/token', methods=['POST'])
 def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    user = User.query.filter_by(email=email).first()
-    if user is None:
-        return jsonify({"Message": "User not found"}), 401
-    if password != user.password:
-        return jsonify({"Message": "Please check your info"})
-    access_token = create_access_token(identity=email)
-    return jsonify(access_token=access_token)
+    if email != "test" or password != "test":
+        return jsonify({"msg":'bad username or password'}), 401
+    access_token = create_access_token(identity = email)
+    return jsonify(access_token = access_token)
+   
+
 
 @api.route('/users', methods=['GET'])
 def handle_user():  
@@ -65,3 +53,4 @@ def createuser():
             return jsonify(message = "user created"),200
         return jsonify(message = "user already exist"),400
     return jsonify(message = "username or password are blank"),400
+    
