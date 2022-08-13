@@ -38,12 +38,14 @@ def handle_tileinventory():
     }
     return jsonify(response_body), 200
 
-@api.route('/maps', methods=['get'])
+@api.route('/maps', methods=['GET'])
 def handle_map():
 
     store_map = Map.query.all()
+    store_map = [map.serialize() for map in store_map]
 
     return jsonify(maps = store_map)
+
 
 
 @api.route('/users', methods=['GET'])
