@@ -18,7 +18,7 @@ export const Signup = () => {
     };
     console.log(item);
 
-    fetch(process.env.BACKEND_URL + "api/signup", {
+    fetch(process.env.BACKEND_URL + "/api/signup", {
       method: "POST",
       body: JSON.stringify(item),
       headers: {
