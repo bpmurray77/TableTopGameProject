@@ -1,4 +1,12 @@
 from flask_sqlalchemy import SQLAlchemy
+import os
+import sys
+from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
+from sqlalchemy import create_engine
+
+
 
 db = SQLAlchemy()
 
@@ -51,7 +59,7 @@ class Tileinventory(db.Model):
 class Map(db.Model):
     id =  db.Column(db.Integer, primary_key=True) 
     user_id = db.Column(db.String(80), unique=False, nullable=False)
-    tileinventory_id =  db.Column(db.String(80), unique=False, nullable=False)
+    tileinventory_id =  db.Column(db.String(80), ForeignKey("tileinventory.id"))
 
     def __repr__(self):
         return f'<Map {self.id}>'

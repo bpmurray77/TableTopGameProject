@@ -25,18 +25,18 @@ def create_token():
 @api.route('/tiles', methods=['get'])
 def handle_tiles():
 
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
-    return jsonify(response_body), 200
+    store_tiles = Tiles.query.all()
+    store_tiles = [tiles.serialize() for tiles in store_tiles]
+
+    return jsonify(tiles = store_tiles)
 
 @api.route('/tileinventory', methods=['get'])
 def handle_tileinventory():
 
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
-    return jsonify(response_body), 200
+    store_tileinventory = Tileinventory.query.all()
+    store_tileinventory = [tileinventory.serialize() for tileinventory in store_tileinventory]
+
+    return jsonify(tileinventory = store_tileinventory)
 
 @api.route('/maps', methods=['GET'])
 def handle_map():
