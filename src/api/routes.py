@@ -30,6 +30,7 @@ def handle_tiles():
 
     return jsonify(tiles = store_tiles)
 
+
 @api.route('/tileinventory', methods=['get'])
 def handle_tileinventory():
 
@@ -77,4 +78,6 @@ def createuser():
             return jsonify(message = "user created"),200
         return jsonify(message = "user already exist"),400
     return jsonify(message = "username or password are blank"),400
+
     
+

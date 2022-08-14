@@ -11,6 +11,7 @@ from sqlalchemy import create_engine
 db = SQLAlchemy()
 
 class User(db.Model):
+    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
@@ -27,10 +28,9 @@ class User(db.Model):
         }
     
 class Tiles(db.Model):
+    __tablename__ = 'tiles'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), unique=False, nullable=False)
-    size = db.Column(db.String(80), unique=False, nullable=False)
-    quantity = db.Column(db.Integer, primary_key=True)
 
     def __repr__(self):
         return f'<Tiles {self.id}>'
@@ -39,14 +39,13 @@ class Tiles(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "size": self.size,
-            "quantity": self.quantity
         }
 
 class Tileinventory(db.Model):
+    __tablename__ = 'tileinventory'
     id =  db.Column(db.Integer, primary_key=True)  
-    user_id = db.Column(db.String(80), unique=False, nullable=False)
-    tiles_id =  db.Column(db.String(80), unique=False, nullable=False)
+    user_id = db.Column(db.String(80), ForeignKey("user.id"))
+    tiles_id =  db.Column(db.String(80), ForeignKey("tiles.id"))
 
     def __repr__(self):
         return f'<Tileinventory {self.id}>'
@@ -57,8 +56,9 @@ class Tileinventory(db.Model):
         }
 
 class Map(db.Model):
+    __tablename__ = 'map'
     id =  db.Column(db.Integer, primary_key=True) 
-    user_id = db.Column(db.String(80), unique=False, nullable=False)
+    user_id = db.Column(db.String(80), ForeignKey("user.id"))
     tileinventory_id =  db.Column(db.String(80), ForeignKey("tileinventory.id"))
 
     def __repr__(self):

@@ -7,7 +7,7 @@ import "../../styles/home.css";
 import "../../styles/inventory.css";
 
 export const Single = (props) => {
-  const { store, actions } = useContext(Context);
+  const { store, actions } = useContext(Context); 
 
   return (
     <div className="parent">
