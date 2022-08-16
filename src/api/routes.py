@@ -8,6 +8,7 @@ from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
+import requests
 
 
 api = Blueprint('api', __name__)
@@ -80,4 +81,17 @@ def createuser():
     return jsonify(message = "username or password are blank"),400
 
     
+@api.route('/tile', methods=['get'])
+def createtile():
+    url = "https://api.thingiverse.com/things/171315/files/"
+    access_token = "34162ed865e5d83e3d6a377af3d10dd9"
+    headers = {
+        "Authorization": f"Bearer {access_token}"
+    }
+    response = requests.get(
+        url,headers=headers,allow_redirects=True
+    )
+    return jsonify(response.json())
+
+
 
