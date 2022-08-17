@@ -8,7 +8,29 @@ import "../../styles/inventory.css";
 
 export const Single = (props) => {
   const { store, actions } = useContext(Context);
- 
+  const getTile = () => {
+
+      fetch('https://api.thingiverse.com/things/171315/files/?access_token=34162ed865e5d83e3d6a377af3d10dd9', {
+          method: "GET",
+          headers: {"Content-Type": "application/json"}
+        })
+        .then(resp => {
+            return resp.json(); 
+        })
+        .then(data => {
+            console.log(data); 
+        })
+        
+    }
+    useEffect(() => {
+
+      getTile()
+
+  }, []);
+    
+
+
+
   return (
     <div className="parent">
       <ul class="dropdown-menu d-block position-static mx-0 shadow w-220px">
@@ -18,7 +40,7 @@ export const Single = (props) => {
             href="/single"
           >
             <svg class="bi" width="16" height="16"></svg>
-            Basic Stone Dungeon
+            Basic Stone Dungeon{data}
           </a>
         </li>
         <li>
