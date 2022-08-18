@@ -9,42 +9,8 @@ export const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-
-  const token = sessionStorage.getItem("token")
-  const handleClick = () =>{
-      
-      const opts = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-
-          email: email,
-          password: password
-
-        })
-      };
-      fetch(process.env.BACKEND_URL + "/api/token", opts)
-      .then(resp => {
-        if (resp.status === 200) return resp.json();
-        else alert("there has been some error");
-      })
-      .then(data =>{
-        console.log("this is from backend", data)
-        sessionStorage.setItem("token", data.access_token)
-      })
-      .catch(error =>{
-        console.error("there was an error", error);
-      })
-
-  }
-
-
 	return (
     <div>
-    {(token && token!="" && token!=undefined) ? ("you are logged in with this token" + token) :(
-		
         <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
@@ -80,7 +46,7 @@ export const Login = () => {
 
       </div>
     </div>
-  </div>) }
+  </div>
         </div>
 	);
 };
