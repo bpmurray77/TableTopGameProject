@@ -8,9 +8,11 @@ import "../../styles/inventory.css";
 
 export const Single = (props) => {
   const { store, actions } = useContext(Context);
+  const [tile,setTile] = useState([]);
+
   const getTile = () => {
 
-      fetch('https://api.thingiverse.com/things/171315/files/?access_token=34162ed865e5d83e3d6a377af3d10dd9', {
+      fetch(process.env.BACKEND_URL + "/api/tile", {
           method: "GET",
           headers: {"Content-Type": "application/json"}
         })
@@ -19,6 +21,7 @@ export const Single = (props) => {
         })
         .then(data => {
             console.log(data); 
+            setTile(data.thumbnail)
         })
         
     }
@@ -40,7 +43,8 @@ export const Single = (props) => {
             href="/single"
           >
             <svg class="bi" width="16" height="16"></svg>
-            Basic Stone Dungeon{data}
+            Basic Stone Dungeon
+            <img src={tile} width="200px"/>
           </a>
         </li>
         <li>
@@ -109,6 +113,7 @@ export const Single = (props) => {
           </svg>
         </a>
       </div>
+      
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
@@ -240,7 +245,6 @@ export const Single = (props) => {
             </div>
           </div>
         </div>
-
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button
@@ -447,5 +451,6 @@ export const Single = (props) => {
         </div>
       </div>
     </div>
+    
   );
 };

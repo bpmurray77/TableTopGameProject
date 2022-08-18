@@ -83,7 +83,7 @@ def createuser():
     
 @api.route('/tile', methods=['get'])
 def createtile():
-    url = "https://api.thingiverse.com/things/171315/files/"
+    url = "https://api.thingiverse.com/things/171315/"
     access_token = "34162ed865e5d83e3d6a377af3d10dd9"
     headers = {
         "Authorization": f"Bearer {access_token}"
