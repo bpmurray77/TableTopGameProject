@@ -12,7 +12,7 @@ export const Single = (props) => {
 
   const getTile = () => {
 
-      fetch(process.env.BACKEND_URL + "/api/tile", {
+      fetch(process.env.BACKEND_URL + "/api/stonetile", {
           method: "GET",
           headers: {"Content-Type": "application/json"}
         })
@@ -44,7 +44,6 @@ export const Single = (props) => {
           >
             <svg class="bi" width="16" height="16"></svg>
             Basic Stone Dungeon
-            <img src={tile} width="200px"/>
           </a>
         </li>
         <li>
@@ -75,6 +74,9 @@ export const Single = (props) => {
           <hr class="dropdown-divider" />
         </li>
       </ul>
+      <div class="ps-5">
+        <img src={tile} width="200px"/>
+      </div>    
       <div class="link">
         <a href="https://www.thingiverse.com/thing:171315/files">
           <svg

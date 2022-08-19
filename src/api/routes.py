@@ -81,8 +81,8 @@ def createuser():
     return jsonify(message = "username or password are blank"),400
 
     
-@api.route('/tile', methods=['get'])
-def createtile():
+@api.route('/stonetile', methods=['get'])
+def createstonetile():
     url = "https://api.thingiverse.com/things/171315/"
     access_token = "34162ed865e5d83e3d6a377af3d10dd9"
     headers = {
@@ -93,5 +93,39 @@ def createtile():
     )
     return jsonify(response.json())
 
+@api.route('/sewertile', methods=['get'])
+def createsewertile():
+    url = "https://api.thingiverse.com/things/922445/"
+    access_token = "34162ed865e5d83e3d6a377af3d10dd9"
+    headers = {
+        "Authorization": f"Bearer {access_token}"
+    }
+    response = requests.get(
+        url,headers=headers,allow_redirects=True
+    )
+    return jsonify(response.json())
 
+@api.route('/towntile', methods=['get'])
+def createtowntile():
+    url = "https://api.thingiverse.com/things/3457042/"
+    access_token = "34162ed865e5d83e3d6a377af3d10dd9"
+    headers = {
+        "Authorization": f"Bearer {access_token}"
+    }
+    response = requests.get(
+        url,headers=headers,allow_redirects=True
+    )
+    return jsonify(response.json())
+
+@api.route('/ruintile', methods=['get'])
+def createruintile():
+    url = "https://api.thingiverse.com/things/528781/"
+    access_token = "34162ed865e5d83e3d6a377af3d10dd9"
+    headers = {
+        "Authorization": f"Bearer {access_token}"
+    }
+    response = requests.get(
+        url,headers=headers,allow_redirects=True
+    )
+    return jsonify(response.json())
 

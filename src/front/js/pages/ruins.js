@@ -8,6 +8,30 @@ import "../../styles/inventory.css";
 
 export const Ruins = (props) => {
   const { store, actions } = useContext(Context);
+  const [ruintile,setRuintile] = useState([]);
+
+  const getruinTile = () => {
+
+    fetch(process.env.BACKEND_URL + "/api/ruintile", {
+        method: "GET",
+        headers: {"Content-Type": "application/json"}
+      })
+      .then(resp => {
+          return resp.json(); 
+      })
+      .then(data => {
+          console.log(data); 
+          setRuintile(data.thumbnail)
+      })
+      
+  }
+  useEffect(() => {
+
+    getruinTile()
+
+}, []);
+  
+
 
   return (
     <div className="parent">
@@ -46,6 +70,9 @@ export const Ruins = (props) => {
           </a>
         </li>
       </ul>
+      <div class="ps-5">
+        <img src={ruintile} width="200px"/>
+      </div>  
       <div class="link">
         <a href="https://www.thingiverse.com/thing:530656/files">
           <svg

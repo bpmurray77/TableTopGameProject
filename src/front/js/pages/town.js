@@ -8,6 +8,28 @@ import "../../styles/inventory.css";
 
 export const Town = (props) => {
   const { store, actions } = useContext(Context);
+  const [towntile,setTowntile] = useState([]);
+
+  const gettownTile = () => {
+
+    fetch(process.env.BACKEND_URL + "/api/towntile", {
+        method: "GET",
+        headers: {"Content-Type": "application/json"}
+      })
+      .then(resp => {
+          return resp.json(); 
+      })
+      .then(data => {
+          console.log(data); 
+          setTowntile(data.thumbnail)
+      })
+      
+  }
+  useEffect(() => {
+
+    gettownTile()
+
+}, []);
 
   return (
     <div className="parent">
@@ -46,6 +68,9 @@ export const Town = (props) => {
           <hr class="dropdown-divider" />
         </li>
       </ul>
+      <div class="ps-5">
+        <img src={towntile} width="200px"/>
+      </div>  
       <div class="link">
         <a href="https://www.thingiverse.com/thing:3452583/files">
           <svg
