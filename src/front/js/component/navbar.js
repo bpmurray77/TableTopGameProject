@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Navbar = ({header, home, signup, login}) =>{
+    const { store, actions } = useContext(Context);
+
     return(
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <Link to={"/"} className="navbar-brand">{header}</Link>
@@ -17,9 +20,14 @@ export const Navbar = ({header, home, signup, login}) =>{
             <Link to={"/signup"} className="navbar-brand" >
             {signup}
             </Link>
+            {!store.token ?
             <Link to={"/login"} className="navbar-brand">
             {login}
-            </Link>
+            </Link> :
+            <button onClick={() =>{actions.logout()}} type="button" class="btn btn-light">logout</button>
+            }
+           
+           
         </div>
     </div> 
     </nav>
