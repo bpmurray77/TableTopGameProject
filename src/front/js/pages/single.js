@@ -8,6 +8,31 @@ import "../../styles/inventory.css";
 
 export const Single = (props) => {
   const { store, actions } = useContext(Context);
+  const [tile,setTile] = useState([]);
+
+  const getTile = () => {
+
+      fetch(process.env.BACKEND_URL + "/api/stonetile", {
+          method: "GET",
+          headers: {"Content-Type": "application/json"}
+        })
+        .then(resp => {
+            return resp.json(); 
+        })
+        .then(data => {
+            console.log(data); 
+            setTile(data.thumbnail)
+        })
+        
+    }
+    useEffect(() => {
+
+      getTile()
+
+  }, []);
+    
+
+
 
   return (
     <div className="parent">
@@ -49,6 +74,9 @@ export const Single = (props) => {
           <hr class="dropdown-divider" />
         </li>
       </ul>
+      <div class="ps-5">
+        <img src={tile} width="200px"/>
+      </div>    
       <div class="link">
         <a href="https://www.thingiverse.com/thing:171315/files">
           <svg
@@ -87,6 +115,7 @@ export const Single = (props) => {
           </svg>
         </a>
       </div>
+      
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
@@ -258,7 +287,6 @@ export const Single = (props) => {
             </div>
           </div>
         </div>
-
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button
@@ -521,5 +549,6 @@ export const Single = (props) => {
         </div>
       </div>
     </div>
+    
   );
 };

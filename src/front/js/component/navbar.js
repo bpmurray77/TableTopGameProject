@@ -1,19 +1,33 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
-export const Navbar = ({header, home, about, service, contact}) =>{
+export const Navbar = ({header, home, signup, login}) =>{
+    const { store, actions } = useContext(Context);
+
     return(
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a className="navbar-brand" href="#">{header}</a>
+        <Link to={"/"} className="navbar-brand">{header}</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav">
-            <a className="nav-item nav-link active" href="#">{home} <span class="sr-only">(current)</span></a>
-            <a className="nav-item nav-link" href="#">{about}</a>
-            <a className="nav-item nav-link" href="#">{service}</a>
-            <a className="nav-item nav-link disabled" href="#">{contact}</a>
+            <Link className="navbar-brand" to={"/single"}>
+            {home} <span class="sr-only">(current)</span>
+            </Link>
+            <br></br>
+            <Link to={"/signup"} className="navbar-brand" >
+            {signup}
+            </Link>
+            {!store.token ?
+            <Link to={"/login"} className="navbar-brand">
+            {login}
+            </Link> :
+            <button onClick={() =>{actions.logout()}} type="button" class="btn btn-light">logout</button>
+            }
+           
+           
         </div>
     </div> 
     </nav>

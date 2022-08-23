@@ -8,6 +8,30 @@ import "../../styles/inventory.css";
 
 export const Sewer = (props) => {
   const { store, actions } = useContext(Context);
+  const [sewertile,setSewertile] = useState([]);
+
+  const getsewerTile = () => {
+
+    fetch(process.env.BACKEND_URL + "/api/sewertile", {
+        method: "GET",
+        headers: {"Content-Type": "application/json"}
+      })
+      .then(resp => {
+          return resp.json(); 
+      })
+      .then(data => {
+          console.log(data); 
+          setSewertile(data.thumbnail)
+      })
+      
+  }
+  useEffect(() => {
+
+    getsewerTile()
+
+}, []);
+  
+
 
   return (
     <div className="parent">
@@ -46,6 +70,9 @@ export const Sewer = (props) => {
           <hr class="dropdown-divider" />
         </li>
       </ul>
+      <div class="ps-5">
+        <img src={sewertile} width="200px"/>
+      </div>  
       <div class="link">
         <a href="https://www.thingiverse.com/thing:922445/files">
           <svg

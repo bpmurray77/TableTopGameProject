@@ -3,38 +3,52 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 import os
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Tiles, Tileinventory, Map
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
+import requests
 
 
 api = Blueprint('api', __name__)
 
 
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
-
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
-
-    return jsonify(response_body), 200
-
-
-#this is login
-@api.route("/token", methods=["POST"])
+@api.route('/token', methods=['POST'])
 def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    user = User.query.filter_by(email=email).first()
-    if user is None:
-        return jsonify({"Message": "User not found"}), 401
-    if password != user.password:
-        return jsonify({"Message": "Please check your info"})
-    access_token = create_access_token(identity=email)
-    return jsonify(access_token=access_token)
+    if email != "test" or password != "test":
+        return jsonify({"msg":'bad username or password'}), 401
+    access_token = create_access_token(identity = email)
+    return jsonify(access_token = access_token)
+
+@api.route('/tiles', methods=['get'])
+def handle_tiles():
+
+    store_tiles = Tiles.query.all()
+    store_tiles = [tiles.serialize() for tiles in store_tiles]
+
+    return jsonify(tiles = store_tiles)
+
+
+@api.route('/tileinventory', methods=['get'])
+def handle_tileinventory():
+
+    store_tileinventory = Tileinventory.query.all()
+    store_tileinventory = [tileinventory.serialize() for tileinventory in store_tileinventory]
+
+    return jsonify(tileinventory = store_tileinventory)
+
+@api.route('/maps', methods=['GET'])
+def handle_map():
+
+    store_map = Map.query.all()
+    store_map = [map.serialize() for map in store_map]
+
+    return jsonify(maps = store_map)
+
+
 
 @api.route('/users', methods=['GET'])
 def handle_user():  
@@ -65,3 +79,53 @@ def createuser():
             return jsonify(message = "user created"),200
         return jsonify(message = "user already exist"),400
     return jsonify(message = "username or password are blank"),400
+
+    
+@api.route('/stonetile', methods=['get'])
+def createstonetile():
+    url = "https://api.thingiverse.com/things/171315/"
+    access_token = "34162ed865e5d83e3d6a377af3d10dd9"
+    headers = {
+        "Authorization": f"Bearer {access_token}"
+    }
+    response = requests.get(
+        url,headers=headers,allow_redirects=True
+    )
+    return jsonify(response.json())
+
+@api.route('/sewertile', methods=['get'])
+def createsewertile():
+    url = "https://api.thingiverse.com/things/922445/"
+    access_token = "34162ed865e5d83e3d6a377af3d10dd9"
+    headers = {
+        "Authorization": f"Bearer {access_token}"
+    }
+    response = requests.get(
+        url,headers=headers,allow_redirects=True
+    )
+    return jsonify(response.json())
+
+@api.route('/towntile', methods=['get'])
+def createtowntile():
+    url = "https://api.thingiverse.com/things/3457042/"
+    access_token = "34162ed865e5d83e3d6a377af3d10dd9"
+    headers = {
+        "Authorization": f"Bearer {access_token}"
+    }
+    response = requests.get(
+        url,headers=headers,allow_redirects=True
+    )
+    return jsonify(response.json())
+
+@api.route('/ruintile', methods=['get'])
+def createruintile():
+    url = "https://api.thingiverse.com/things/528781/"
+    access_token = "34162ed865e5d83e3d6a377af3d10dd9"
+    headers = {
+        "Authorization": f"Bearer {access_token}"
+    }
+    response = requests.get(
+        url,headers=headers,allow_redirects=True
+    )
+    return jsonify(response.json())
+

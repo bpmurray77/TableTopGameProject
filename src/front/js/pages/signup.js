@@ -52,7 +52,7 @@ export const Signup = () => {
                     <div class="form-group">
                       <label>Email</label>
                       <input
-                        valu={email}
+                        value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         class="form-control form-control-lg"
                         type="email"
