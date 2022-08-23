@@ -48,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				
 
 				try {
-				const resp = await fetch("https://3001-bpmurray77-tabletopgame-ryarvtsp6dh.ws-us62.gitpod.io/api/token", opts)
+				const resp = await fetch("https://3001-bpmurray77-tabletopgame-mhixdsf4jpz.ws-us62.gitpod.io/api/token", opts)
 				if(resp.status !== 200){
 
 				 alert("there has been some error");
