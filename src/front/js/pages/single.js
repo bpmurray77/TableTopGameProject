@@ -108,11 +108,15 @@ export const Single = (props) => {
                   1x1
                   <div class="input-group">
                     <span class="input-group-text">Quantity</span>
+                    <form class="formBox">
                     <input
                       type="number"
+                      id="sf11"
                       aria-label="Quantity"
                       class="form-control"
                     />
+                    <button id="btnsf11">Click to Add</button>
+                    </form>
                   </div>
                 </li>
                 <li class="list-group-item">
