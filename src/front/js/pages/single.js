@@ -123,99 +123,135 @@ export const Single = (props) => {
                   1x2
                   <div class="input-group">
                     <span class="input-group-text">Quantity</span>
+                    <form class="formBox">
                     <input
                       type="number"
+                      id="sf12"
                       aria-label="Quantity"
                       class="form-control"
                     />
+                    <button id="btnsf12">Click to Add</button>
+                    </form>
                   </div>
                 </li>
                 <li class="list-group-item">
                   1x3
                   <div class="input-group">
                     <span class="input-group-text">Quantity</span>
+                    <form class="formBox">
                     <input
                       type="number"
+                      id="sf13"
                       aria-label="Quantity"
                       class="form-control"
                     />
+                    <button id="btnsf13">Click to Add</button>
+                    </form>
                   </div>
                 </li>
                 <li class="list-group-item">
                   1x4
                   <div class="input-group">
                     <span class="input-group-text">Quantity</span>
+                    <form class="formBox">
                     <input
                       type="number"
+                      id="sf14"
                       aria-label="Quantity"
                       class="form-control"
                     />
+                    <button id="btnsf14">Click to Add</button>
+                    </form>
                   </div>
                 </li>
                 <li class="list-group-item">
                   2x2
                   <div class="input-group">
                     <span class="input-group-text">Quantity</span>
+                    <form class="formBox">
                     <input
                       type="number"
+                      id="sf22"
                       aria-label="Quantity"
                       class="form-control"
                     />
+                    <button id="btnsf22">Click to Add</button>
+                    </form>
                   </div>
                 </li>
                 <li class="list-group-item">
                   2x3
                   <div class="input-group">
                     <span class="input-group-text">Quantity</span>
+                    <form class="formBox">
                     <input
                       type="number"
+                      id="sf23"
                       aria-label="Quantity"
                       class="form-control"
                     />
+                    <button id="btnsf23">Click to Add</button>
+                    </form>
                   </div>
                 </li>
                 <li class="list-group-item">
                   2x4
                   <div class="input-group">
                     <span class="input-group-text">Quantity</span>
+                    <form class="formBox">
                     <input
                       type="number"
+                      id="sf24"
                       aria-label="Quantity"
                       class="form-control"
                     />
+                    <button id="btnsf24">Click to Add</button>
+                    </form>
                   </div>
                 </li>
                 <li class="list-group-item">
                   3x3
                   <div class="input-group">
                     <span class="input-group-text">Quantity</span>
+                    <form class="formBox">
                     <input
                       type="number"
+                      id="sf33"
                       aria-label="Quantity"
                       class="form-control"
                     />
+                    <button id="btnsf33">Click to Add</button>
+                    </form>
                   </div>
                 </li>
                 <li class="list-group-item">
                   3x4
                   <div class="input-group">
                     <span class="input-group-text">Quantity</span>
+                    <form class="formBox">
                     <input
                       type="number"
+                      id="sf34"
                       aria-label="Quantity"
                       class="form-control"
                     />
+                    <button id="btnsf34">Click to Add</button>
+                    </form>
                   </div>
                 </li>
                 <li class="list-group-item">
                   4x4
                   <div class="input-group">
                     <span class="input-group-text">Quantity</span>
+                    <form class="formBox">
                     <input
                       type="number"
+                      id="sf44"
                       aria-label="Quantity"
                       class="form-control"
                     />
+                    <button id="btnsf44">Click to Add</button>
+                    </form>
                   </div>
                 </li>
               </ul>
