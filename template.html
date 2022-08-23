@@ -32,6 +32,186 @@
     ></script>
     <script>
       let allPieces = [];
+      const addsw11 = (ev) => {
+        ev.preventDefault();
+        let piece = {
+          id: "Stone Wall 1x1",
+          width: 1,
+          length: 1,
+          quantity: document.getElementById("sw11").value,
+        };
+        allPieces.push(piece);
+        document.forms[10].reset();
+
+        console.log(allPieces);
+
+        localStorage.setItem("Inventory", JSON.stringify(allPieces));
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btnsw11").addEventListener("click", addsw11);
+      });
+      const addsw12 = (ev) => {
+        ev.preventDefault();
+        let piece = {
+          id: "Stone Wall 1x2",
+          width: 1,
+          length: 2,
+          quantity: document.getElementById("sw12").value,
+        };
+        allPieces.push(piece);
+        document.forms[11].reset();
+
+        console.log(allPieces);
+
+        localStorage.setItem("Inventory", JSON.stringify(allPieces));
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btnsw12").addEventListener("click", addsw12);
+      });
+      const addsw13 = (ev) => {
+        ev.preventDefault();
+        let piece = {
+          id: "Stone Wall 1x3",
+          width: 1,
+          length: 3,
+          quantity: document.getElementById("sw13").value,
+        };
+        allPieces.push(piece);
+        document.forms[12].reset();
+
+        console.log(allPieces);
+
+        localStorage.setItem("Inventory", JSON.stringify(allPieces));
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btnsw13").addEventListener("click", addsw13);
+      });
+      const addsw14 = (ev) => {
+        ev.preventDefault();
+        let piece = {
+          id: "Stone Wall 1x4",
+          width: 1,
+          length: 4,
+          quantity: document.getElementById("sw14").value,
+        };
+        allPieces.push(piece);
+        document.forms[13].reset();
+
+        console.log(allPieces);
+
+        localStorage.setItem("Inventory", JSON.stringify(allPieces));
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btnsw14").addEventListener("click", addsw14);
+      });
+      const addsw22 = (ev) => {
+        ev.preventDefault();
+        let piece = {
+          id: "Stone Wall 2x2",
+          width: 2,
+          length: 2,
+          quantity: document.getElementById("sw22").value,
+        };
+        allPieces.push(piece);
+        document.forms[14].reset();
+
+        console.log(allPieces);
+
+        localStorage.setItem("Inventory", JSON.stringify(allPieces));
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btnsw22").addEventListener("click", addsw22);
+      });
+      const addsw23 = (ev) => {
+        ev.preventDefault();
+        let piece = {
+          id: "Stone Wall 2x3",
+          width: 2,
+          length: 3,
+          quantity: document.getElementById("sw23").value,
+        };
+        allPieces.push(piece);
+        document.forms[15].reset();
+
+        console.log(allPieces);
+
+        localStorage.setItem("Inventory", JSON.stringify(allPieces));
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btnsw23").addEventListener("click", addsw23);
+      });
+      const addsw24 = (ev) => {
+        ev.preventDefault();
+        let piece = {
+          id: "Stone Wall 2x4",
+          width: 2,
+          length: 4,
+          quantity: document.getElementById("sw24").value,
+        };
+        allPieces.push(piece);
+        document.forms[16].reset();
+
+        console.log(allPieces);
+
+        localStorage.setItem("Inventory", JSON.stringify(allPieces));
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btnsw24").addEventListener("click", addsw24);
+      });
+      const addsw33 = (ev) => {
+        ev.preventDefault();
+        let piece = {
+          id: "Stone Wall 3x3",
+          width: 3,
+          length: 3,
+          quantity: document.getElementById("sw33").value,
+        };
+        allPieces.push(piece);
+        document.forms[17].reset();
+
+        console.log(allPieces);
+
+        localStorage.setItem("Inventory", JSON.stringify(allPieces));
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btnsw33").addEventListener("click", addsw33);
+      });
+      const addsw34 = (ev) => {
+        ev.preventDefault();
+        let piece = {
+          id: "Stone Wall 3x4",
+          width: 3,
+          length: 4,
+          quantity: document.getElementById("sw34").value,
+        };
+        allPieces.push(piece);
+        document.forms[18].reset();
+
+        console.log(allPieces);
+
+        localStorage.setItem("Inventory", JSON.stringify(allPieces));
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btnsw34").addEventListener("click", addsw34);
+      });
+      const addsw44 = (ev) => {
+        ev.preventDefault();
+        let piece = {
+          id: "Stone Wall 4x4",
+          width: 4,
+          length: 4,
+          quantity: document.getElementById("sw44").value,
+        };
+        allPieces.push(piece);
+        document.forms[19].reset();
+
+        console.log(allPieces);
+
+        localStorage.setItem("Inventory", JSON.stringify(allPieces));
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btnsw44").addEventListener("click", addsw44);
+      });
       const addsf11 = (ev) => {
         ev.preventDefault();
         let piece = {
@@ -211,6 +391,78 @@
       };
       document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("btnsf44").addEventListener("click", addsf44);
+      });
+      const addsc11 = (ev) => {
+        ev.preventDefault();
+        let piece = {
+          id: "Stone Corner 1x1",
+          width: 1,
+          length: 1,
+          quantity: document.getElementById("sc11").value,
+        };
+        allPieces.push(piece);
+        document.forms[20].reset();
+
+        console.log(allPieces);
+
+        localStorage.setItem("Inventory", JSON.stringify(allPieces));
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btnsc11").addEventListener("click", addsc11);
+      });
+      const addsc22 = (ev) => {
+        ev.preventDefault();
+        let piece = {
+          id: "Stone Corner 2x2",
+          width: 2,
+          length: 2,
+          quantity: document.getElementById("sc22").value,
+        };
+        allPieces.push(piece);
+        document.forms[21].reset();
+
+        console.log(allPieces);
+
+        localStorage.setItem("Inventory", JSON.stringify(allPieces));
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btnsc22").addEventListener("click", addsc22);
+      });
+      const addsc33 = (ev) => {
+        ev.preventDefault();
+        let piece = {
+          id: "Stone Corner 3x3",
+          width: 3,
+          length: 3,
+          quantity: document.getElementById("sc33").value,
+        };
+        allPieces.push(piece);
+        document.forms[22].reset();
+
+        console.log(allPieces);
+
+        localStorage.setItem("Inventory", JSON.stringify(allPieces));
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btnsc33").addEventListener("click", addsc33);
+      });
+      const addsc44 = (ev) => {
+        ev.preventDefault();
+        let piece = {
+          id: "Stone Corner 4x4",
+          width: 4,
+          length: 4,
+          quantity: document.getElementById("sc44").value,
+        };
+        allPieces.push(piece);
+        document.forms[23].reset();
+
+        console.log(allPieces);
+
+        localStorage.setItem("Inventory", JSON.stringify(allPieces));
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btnsc44").addEventListener("click", addsc44);
       });
     </script>
   </body>
