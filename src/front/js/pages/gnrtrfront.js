@@ -29,6 +29,14 @@ export const Gnrtr = () => {
       <div class="container-fluid py-5" >
         <h1  class="display-5 fw-bold text-white">Tileset Generator</h1>
       </div>
+      <div class="text-center mt-3">
+                      <button
+                        type="button"
+                        class="btn btn-lg btn-primary"
+                      >
+                        Generate a Map
+                      </button>
+                    </div>
     </div>
 	);
 };
