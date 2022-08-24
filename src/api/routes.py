@@ -9,6 +9,7 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 import requests
+import random
 
 
 api = Blueprint('api', __name__)
@@ -128,4 +129,23 @@ def createruintile():
         url,headers=headers,allow_redirects=True
     )
     return jsonify(response.json())
+
+@api.route('/gnrtrfront')
+def gen_route():
+    def generator():
+        width, height = 5, 5 
+        tiles = ["A","B","C"]  
+        room = []
+
+        for x in range(height):
+            room.append([])
+            for y in range(width):
+                room[x].append(tiles[random.randint(0,len(tiles)-1)])
+        return room
+
+    resp = {
+        "tiles": generator()
+    }
+
+    return jsonify(resp), 200
 
