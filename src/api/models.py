@@ -65,8 +65,7 @@ class Map(db.Model):
     __tablename__ = 'map'
     id =  db.Column(db.Integer, primary_key=True) 
     user_id = db.Column(db.Integer, ForeignKey("user.id"))
-    tileinventory_id = db.Column(db.Integer, ForeignKey("tileinventory.id"))
-
+  
     def __repr__(self):
         return f'<Map {self.id}>'
 
@@ -74,6 +73,5 @@ class Map(db.Model):
         return {
             "id": self.id,
             "user_id": self.user_id,
-            "tileinventory_id": self.tileinventory_id
         }
 

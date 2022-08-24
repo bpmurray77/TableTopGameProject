@@ -35,14 +35,15 @@ def handle_tiles():
 def handle_newinventory():
 
     body = request.get_json()
-    newuser = Tileinventory(
+    newinventory = Tileinventory(
+                id = body["id"],
                 width = body["width"],
                 length = body["length"],
                 quantity = body["quantity"],
             )
-    db.session.add(newuser)
+    db.session.add(newinventory)
     db.session.commit()
-    return jsonify(message = "user created"),200
+    return jsonify(message = "created"),200
 
 @api.route('/tileinventory', methods=['get'])
 def handle_tileinventory():
