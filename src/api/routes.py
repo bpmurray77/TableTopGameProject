@@ -31,6 +31,18 @@ def handle_tiles():
 
     return jsonify(tiles = store_tiles)
 
+@api.route('/newinventory', methods=['post'])
+def handle_newinventory():
+
+    body = request.get_json()
+    newuser = Tileinventory(
+                width = body["width"],
+                length = body["length"],
+                quantity = body["quantity"],
+            )
+    db.session.add(newuser)
+    db.session.commit()
+    return jsonify(message = "user created"),200
 
 @api.route('/tileinventory', methods=['get'])
 def handle_tileinventory():
