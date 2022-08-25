@@ -50,6 +50,14 @@ def handle_map():
     return jsonify(maps = store_map)
 
 
+@api.route('/inventory', methods=['GET'])
+def handle_inventory():
+
+    store_inventory = Inventory.query.all()
+    store_inventory = [inventory.serialize() for inventory in store_inventory]
+
+    return jsonify(inventory = store_inventory)
+
 
 @api.route('/users', methods=['GET'])
 def handle_user():  
