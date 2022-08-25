@@ -4,6 +4,7 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
 import { Button } from "../component/button";
+import "../../styles/home.css";
 
 export const Gnrtr = () => {
 	const { store, actions } = useContext(Context);

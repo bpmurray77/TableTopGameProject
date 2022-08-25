@@ -15,7 +15,7 @@ def gen_route():
         return room
 
     resp = {
-        "tiles": generator()
+        generator()
     }
 
     return jsonify(resp), 200

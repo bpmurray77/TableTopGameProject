@@ -28,7 +28,7 @@ export const Button = ({header, home, signup, login}) =>{
 
     return(
         <div class="parent">
-        <div>
+        <div class="testing">
         {data ? data : "No Map"}
         </div>
         <div class="text-center mt-3">
