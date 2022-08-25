@@ -1,0 +1,14 @@
+.standing {
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    bottom: 55px;
+    margin: 10px;
+}
+.map {
+    color: white;
+    overflow-wrap: break-word;
+    inline-size: 222px;
+}

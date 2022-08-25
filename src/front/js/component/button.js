@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { Reveal } from "./reveal";
 
 export const Button = ({header, home, signup, login}) =>{
     const { store, actions } = useContext(Context);
@@ -18,7 +19,7 @@ export const Button = ({header, home, signup, login}) =>{
             return resp.json(); // (returns promise) will try to parse the result as json as return a promise that you can .then for results
           })
           .then((data) => {
-            sessionStorage.setItem("data", data)
+            sessionStorage.setItem("data", data.tiles)
             console.log(data);
           })
           .catch((error) => {
@@ -26,10 +27,19 @@ export const Button = ({header, home, signup, login}) =>{
           });
       };
 
+    function refreshPage(){
+        window.location.reload();
+    } 
+
+
+
     return(
-        <div class="parent">
-        <div class="testing">
+        <div class="standing">
+        <div class="map">
         {data ? data : "No Map"}
+        </div>
+        <div class="target">
+        {data ? <Reveal /> : "No Map"}
         </div>
         <div class="text-center mt-3">
             <button
@@ -38,6 +48,13 @@ export const Button = ({header, home, signup, login}) =>{
             onClick={Action}
             >
             Generate a Map
+            </button>
+            <button
+            type="button"
+            class="btn btn-lg btn-primary"
+            onClick={refreshPage}
+            >
+            Render Map
             </button>
         </div>
         </div>
