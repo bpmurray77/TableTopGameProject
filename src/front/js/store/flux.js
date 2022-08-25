@@ -48,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				
 
 				try {
-				const resp = await fetch(process.env.BACKEND_URL + "/api/tokens", opts)
+				const resp = await fetch(process.env.BACKEND_URL + "/api/token", opts)
 				if(resp.status !== 200){
 
 				 alert("there has been some error");
