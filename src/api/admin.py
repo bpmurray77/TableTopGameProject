@@ -1,7 +1,7 @@
   
 import os
 from flask_admin import Admin
-from .models import db, User, Tileinventory, Tiles, Map
+from .models import db, User, Tileinventory, Tiles, Map, Inventory
 from flask_admin.contrib.sqla import ModelView
 
 def setup_admin(app):
@@ -15,5 +15,6 @@ def setup_admin(app):
     admin.add_view(ModelView(Tiles, db.session))
     admin.add_view(ModelView(Tileinventory, db.session))
     admin.add_view(ModelView(Map, db.session))
+    admin.add_view(ModelView(Inventory, db.session))
     # You can duplicate that line to add mew models
     # admin.add_view(ModelView(YourModelName, db.session))
