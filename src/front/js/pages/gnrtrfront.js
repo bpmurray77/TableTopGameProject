@@ -3,6 +3,8 @@ import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
+import { Button } from "../component/button";
+import "../../styles/gen.css"; 
 
 export const Gnrtr = () => {
 	const { store, actions } = useContext(Context);
@@ -30,12 +32,7 @@ export const Gnrtr = () => {
         <h1  class="display-5 fw-bold text-white">Tileset Generator</h1>
       </div>
       <div class="text-center mt-3">
-                      <button
-                        type="button"
-                        class="btn btn-lg btn-primary"
-                      >
-                        Generate a Map
-                      </button>
+                      <Button />
                     </div>
     </div>
 	);
