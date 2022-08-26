@@ -7,6 +7,7 @@ export const Button = ({header, home, signup, login}) =>{
     const { store, actions } = useContext(Context);
 
     let data = sessionStorage.getItem("data");
+    let newdata = data.replace(/,/g," ")
 
     const Action = () => {
         fetch(process.env.BACKEND_URL + "/api/gnrtrfront", {
@@ -36,10 +37,10 @@ export const Button = ({header, home, signup, login}) =>{
     return(
         <div class="standing">
         <div class="map">
-        {data ? data : "No Map"}
+        {newdata ? newdata : "No Map"}
         </div>
         <div class="target">
-        {data ? <Reveal /> : "No Map"}
+        {newdata ? <Reveal /> : "No Map"}
         </div>
         <div class="text-center mt-3">
             <button
