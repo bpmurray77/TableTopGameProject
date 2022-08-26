@@ -31,7 +31,9 @@ const Layout = () => {
                     home = "Tile Inventory"
                     signup = "Signup"
                     login = "Login"
-                    myinventory = "My Inventory"/>
+                    myinventory = "My Inventory"
+                    gnrtr = "Generator"
+                    />
 
                     <Routes>
                         <Route element={<Home />} path="/" />

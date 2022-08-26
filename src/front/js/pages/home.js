@@ -36,12 +36,12 @@ export const Home = () => {
         </div>
         <div class="form-text text-center mb-5 text-light">
           <Link to="/login">
-          <p class="text-light fw-bold"> Login</p>
+          <p class="text-light fw-bold"> Welcome!</p>
             </Link>
         </div>
         <div class="form-text text-center mb-5 text-light">
           <Link to="/signup">
-          <p class="text-light fw-bold"> Signup</p>
+          <p class="text-light fw-bold"> Have fun creating!</p>
             </Link>
         </div>
       </form>

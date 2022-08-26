@@ -11,7 +11,7 @@ export const Signup = () => {
   const [password, setPassword] = useState("");
   const message = localStorage.getItem("message")
   let navigate = useNavigate()
-  let erasemessage = localStorage.removeItem("message")
+  let erasemessage = sessionStorage.removeItem("message")
 
   const registerUser = (e) => {
     let item = {
@@ -33,7 +33,7 @@ export const Signup = () => {
         return resp.json(); // (returns promise) will try to parse the result as json as return a promise that you can .then for results
       })
       .then((data) => {
-        localStorage.setItem("message", data.message)
+        sessionStorage.setItem("message", data.message)
         if (message && message==='user created') navigate("/login") + erasemessage  
   
         console.log(data);
@@ -43,7 +43,6 @@ export const Signup = () => {
       });
  
   };
-
 
   return (
     <div class="container h-100">
@@ -81,14 +80,15 @@ export const Signup = () => {
                       />
                     </div>
                     <div class="text-center mt-3">
+                      <Link to="/login">
                       <button
                         onClick={registerUser}
-                        type="button"
+                        type="submit"
                         class="btn btn-lg btn-primary"
                       >
                         Sign up
                       </button>
-                      {(message && message!='user created') ? message : message}
+</Link>
                     </div>
                   </form>
                 </div>
