@@ -81,14 +81,15 @@ export const Signup = () => {
                       />
                     </div>
                     <div class="text-center mt-3">
+                    <Link to="/login">
                       <button
                         onClick={registerUser}
-                        type="button"
+                        type="submit"
                         class="btn btn-lg btn-primary"
                       >
                         Sign up
                       </button>
-                      {(message && message!='user created') ? message : message}
+</Link>
                     </div>
                   </form>
                 </div>
