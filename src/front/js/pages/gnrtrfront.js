@@ -26,7 +26,7 @@ export const Gnrtr = () => {
 	return (
 		<div class="p-5 mb-4 bg-dark rounded-3 container " style={myStyle}>
       <div class="container-fluid py-5" >
-        <h1  class="display-5 fw-bold text-white">Tileset Generator</h1>
+        <h1  class="display-5 fw-bold text-white">Tileset Generator:</h1>
       </div>
       <div class="text-center mt-3">
                       <Button />
