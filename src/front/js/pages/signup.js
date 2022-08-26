@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../styles/signup.css";
 import { v4 as uuidv4 } from "uuid";
 
@@ -9,6 +9,10 @@ export const Signup = () => {
   const { store, actions } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const message = localStorage.getItem("message")
+  let navigate = useNavigate()
+  let erasemessage = localStorage.removeItem("message")
+
   const registerUser = (e) => {
     let item = {
       id: uuidv4(),
@@ -29,12 +33,17 @@ export const Signup = () => {
         return resp.json(); // (returns promise) will try to parse the result as json as return a promise that you can .then for results
       })
       .then((data) => {
+        localStorage.setItem("message", data.message)
+        if (message && message==='user created') navigate("/login") + erasemessage  
+  
         console.log(data);
       })
       .catch((error) => {
         console.log(error);
       });
+ 
   };
+
 
   return (
     <div class="container h-100">
@@ -79,6 +88,7 @@ export const Signup = () => {
                       >
                         Sign up
                       </button>
+                      {(message && message!='user created') ? message : message}
                     </div>
                   </form>
                 </div>

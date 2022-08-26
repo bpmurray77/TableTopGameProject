@@ -3,7 +3,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 import os
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Tiles, Tileinventory, Map
+from api.models import db, User, Tiles, Tileinventory, Map, Inventory
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -19,8 +19,8 @@ api = Blueprint('api', __name__)
 def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    if email != "test" or password != "test":
-        return jsonify({"msg":'bad username or password'}), 401
+
+    return jsonify({"msg":'bad username or password'}), 401
     access_token = create_access_token(identity = email)
     return jsonify(access_token = access_token)
 
@@ -49,6 +49,14 @@ def handle_map():
 
     return jsonify(maps = store_map)
 
+
+@api.route('/inventory', methods=['GET'])
+def handle_inventory():
+
+    store_inventory = Inventory.query.all()
+    store_inventory = [inventory.serialize() for inventory in store_inventory]
+
+    return jsonify(inventory = store_inventory)
 
 
 @api.route('/users', methods=['GET'])
