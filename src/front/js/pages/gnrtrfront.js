@@ -10,10 +10,7 @@ export const Gnrtr = () => {
 	const { store, actions } = useContext(Context);
 
   const myStyle={
-    backgroundImage: 
-"url('https://wallpaperaccess.com/full/88167.jpg')",
     height:'100vh',
-    marginTop:'-70px',
     fontSize:'50px',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat'}
@@ -27,7 +24,7 @@ export const Gnrtr = () => {
     }
 
 	return (
-		<div class="p-5 mb-4 bg-light rounded-3" style={myStyle}>
+		<div class="p-5 mb-4 bg-dark rounded-3 container " style={myStyle}>
       <div class="container-fluid py-5" >
         <h1  class="display-5 fw-bold text-white">Tileset Generator</h1>
       </div>

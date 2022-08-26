@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Navbar = ({header, home, signup, login}) =>{
+export const Navbar = ({header, home, signup, login, myinventory}) =>{
     const { store, actions } = useContext(Context);
 
     return(
@@ -17,6 +17,9 @@ export const Navbar = ({header, home, signup, login}) =>{
             {home} <span class="sr-only">(current)</span>
             </Link>
             <br></br>
+            <Link to={"/myinventory"} className="navbar-brand" >
+            {myinventory}
+            </Link>
             <Link to={"/signup"} className="navbar-brand" >
             {signup}
             </Link>

@@ -27,10 +27,12 @@ const Layout = () => {
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
                     <Navbar 
-                    header = "Tiles Generator"
-                    home = "Inventory"
+                    header = "Home"
+                    home = "Tile Inventory"
                     signup = "Signup"
-                    login = "Login"/>
+                    login = "Login"
+                    myinventory = "My Inventory"/>
+
                     <Routes>
                         <Route element={<Home />} path="/" />
                         <Route element={<Demo />} path="/demo" />

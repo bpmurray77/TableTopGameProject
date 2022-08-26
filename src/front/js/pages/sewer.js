@@ -67,7 +67,6 @@ export const Sewer = (props) => {
           </a>
         </li>
         <li>
-          <hr class="dropdown-divider" />
         </li>
       </ul>
       <div class="ps-5">
