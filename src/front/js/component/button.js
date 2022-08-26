@@ -47,14 +47,14 @@ export const Button = ({header, home, signup, login}) =>{
             class="btn btn-lg btn-primary"
             onClick={Action}
             >
-            Generate a Map
+            1. Generate a Map
             </button>
             <button
             type="button"
             class="btn btn-lg btn-primary"
             onClick={refreshPage}
             >
-            Render Map
+            2. Render Map
             </button>
         </div>
         </div>

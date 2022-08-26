@@ -11,4 +11,10 @@
     color: white;
     overflow-wrap: break-word;
     inline-size: 222px;
+    outline: 5px solid black;
+}
+
+.target{
+    font-size: 33px;
+    margin-top: 22px;
 }
