@@ -13,9 +13,6 @@ export const Navbar = ({header, home, signup, login}) =>{
         </button>
     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav">
-            <Link className="navbar-brand" to={"/single"}>
-            {home} <span class="sr-only">(current)</span>
-            </Link>
             <br></br>
             <Link to={"/signup"} className="navbar-brand" >
             {signup}
@@ -26,6 +23,10 @@ export const Navbar = ({header, home, signup, login}) =>{
             </Link> :
             <button onClick={() =>{actions.logout()}} type="button" class="btn btn-light">logout</button>
             }
+            <Link to="/single" className="navbar-brand">Vault</Link>
+            <Link to="/myinventory" className="navbar-brand">My Inventory</Link>
+            <Link to="/gnrtr" className="navbar-brand">Generator</Link>
+
            
            
         </div>
